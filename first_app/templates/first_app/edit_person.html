@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'first_app/style.css' %}">
+    </head>
+    <body>
+        <h1>Edytuj osobę</h1>
+        {{form}}
+        <form action="/edit_person/{{person.id}}" method="POST">
+            <label for="name">Enter name: </label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              value="{{person.name}}" />
+            <input type="submit" value="OK" />
+          </form>
+          
+    </body>
+</html>
